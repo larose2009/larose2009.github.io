@@ -1,0 +1,45 @@
+.slide{
+    background-color: white;
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+
+    grid-template-areas:
+        "text image";
+
+        a{
+            color: black;
+            margin-bottom: 1.5rem;
+        }
+
+        p{
+            text-align: justify;
+            padding: 1rem;
+            margin: 3rem;
+            background-color: $pink;
+        }
+
+        &__text{
+            grid-area: text;
+            justify-self: center;
+            align-self: center;
+            font-size: $font-lg;
+
+        }
+
+        &__image{
+            grid-area: image;
+            padding: 1rem;
+        }
+
+        &__slideshow-container{
+            max-width: 500px;
+            max-height: 800px;
+            position: static;
+            margin: 2rem;
+            justify-items: center;
+            align-items: center;
+        }
+
+}

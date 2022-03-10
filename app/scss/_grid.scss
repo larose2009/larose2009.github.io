@@ -1,0 +1,52 @@
+.grid{
+    background-color: white;
+
+    &__storegrid{
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+
+        a{
+            font-size: $font-sm;
+            color: $grey;
+            line-height: 1.5;
+        }
+    }
+
+    &__grid{
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+        a{
+            font-size: $font-sm;
+            color: $grey;
+            line-height: 1.5;
+        }
+    }
+
+    &__image{
+
+        height: 18rem;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &__title{
+
+        padding: 0.5rem;
+        text-align: center;
+        background-color: $pink;
+        height: 3.5rem;
+        color: black;
+        font-size: $font-sm;
+        line-height: 1.5rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}

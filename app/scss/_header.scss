@@ -1,0 +1,75 @@
+.header{
+
+    margin: 0;
+    background-color: $pink;
+
+
+    &__link{
+
+        a{
+            position: relative;
+            font-size: $font-med;
+            color: $black;
+            transition: color 300ms ease-in-out;
+            margin:10px;
+
+
+            &:not(:last-child){
+                margin-right: 20px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 5px;
+                left :0;
+                right: 0;
+                bottom: -5px;
+                background: linear-gradient(to right, pink, pink);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+
+            }
+            &:hover {
+                color: $grey;
+
+                &::before {
+                    opacity: 1;
+
+                }
+
+            }
+        }
+    
+
+    }
+
+    nav{
+        position: relative;
+        background-color: $pink;
+        padding-top: 2rem;
+        padding-bottom: 1.0625rem;
+        padding-right: 2rem;
+        font-size: $font-lg;
+
+        border-style: none none solid;
+
+    }
+
+    &__logo {
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    .cart ion-icon{
+        font-size: 30px;
+        
+    }
+
+    .cart a{
+        color: black;
+        cursor: pointer;
+    }
+
+}

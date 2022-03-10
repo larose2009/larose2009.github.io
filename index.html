@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="app/scss/style.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="app/js/myscript.js"></script>
+
+        <title>La Rose</title>
+    </head>
+
+<body>
+
+    <header class="header">
+        <nav class="container flex flex-ai-c">
+            <a href="index.html" class="header__logo">
+                <img src="images/yes_logo.png"
+                width="140" 
+                height="60">
+            </a>
+            
+            <div class="header__link container flex flex-ai-c">
+                
+                <a href="#">Início</a>
+                <a href="store.html#vestuario">Vestuário</a>
+                <a href="store.html#calcado">Calçado</a>
+                <a href="store.html#acessorios">Acessórios</a>
+    
+            </div>
+
+            <div class="header_logo container--pr flex flex-ai-c">
+                <a href="map.html">
+                    <img src="images/local.png">
+                </a>
+
+                &nbsp;&nbsp;&nbsp;
+
+                <span class="cart">
+                    <a href="cart.html">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                    </a>
+ 
+                    <span id="group">
+                        <span class="badge badge-light"></span>
+                    </span>
+ 
+                </span>
+
+            </div>
+
+        </nav>
+        
+
+    </header>
+    
+    <section class="slide">
+
+        <div class="slide-container flex flex-ai-c">
+            <p style="text-align:center;"><font size="4.8"> Bem vinda à La Rose! 
+                <br>
+            
+            Somos uma loja de roupa e acessórios para senhora com espaço físico no centro da cidade de Loures. 
+            A nossa carteira de marcas inclui Liu•Jo, Relish, Kocca, Odi et Amo, Vdr, Jeffrey Campbell, Bamburi, Gold & Rouge, La Carrie Bag e Ugg.  
+
+            </font></p>
+
+        </div>
+        
+        <div class="slide__image flex flex-ai-c flex-jc-c">
+            <div class="slide__slideshow-container">
+
+                <div class="slide_fade">
+                    <img src="images/frontpage1.jpg" width="500" height="550"> 
+                </div>
+
+                <div class="slide_fade">
+                    <img src="images/frontpage_3.jpg" width="500" height="550"> 
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            var  slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("slide_fade");
+                    for (i=0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+
+                    if (slideIndex > slides.length) {
+                        slideIndex = 1
+                    }
+
+                    slides[slideIndex-1].style.display = "block";
+                    setTimeout(showSlides, 3000);
+            }
+
+        </script>
+
+    </section>
+
+    
+
+    <footer class="footer">
+
+        <div class="footer__social">
+
+            <a target="blank" href="https://www.instagram.com/laroseloures/">
+                <img src="images/instagram.png">
+            </a>
+
+            <a target="blank" href="https://www.facebook.com/larose.loures">
+                <img src="images/facebook.png">
+            </a>
+
+
+        </div>
+
+        <div class="footer__copyright">
+            &copy; La Rose. All Rights Reserved.
+
+        </div>
+        
+
+    </footer>
+    <script src="app/js/shop.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script lang="javascript" src="app/xlsx.full.min.js"></script>
+    <script lang="javascript" src="app/FileSaver.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app/scss/style.css">
+
+    <title>La Rose</title>
+
+    <script>
+        function postToGoogle() { 
+            
+            let total = JSON.parse(localStorage.getItem('precoTotal'));
+            let items = JSON.parse(localStorage.getItem('produtosComprados'));
+
+            let array_items = [];
+
+            for (let i = 0; i < items.length; i++) {
+                array_items.push(items[i][0] + ", size: " + items[i][1]);
+            }
+            
+            text_items = array_items.join("\n");
+
+            // {"produto": "Produto",  "size":"Tamanho", "price": "Preço (€)", "remove":"Remover" }
+            //compras e total
+
+            $("#fname").val();
+            $("#telefone").val();
+            $("#morada").val();
+            $("#items").val(text_items);
+            $("#total").val(total);
+
+            var field1 = $("#fname").val();
+            var field2 = $("#telefone").val();
+            var field3 = $("#morada").val();
+            var field4 = $("#items").val();
+            var field5 = $("#total").val();
+
+            let post_result = false;
+
+            $.ajax({
+
+            url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLScg0_nNzzmragRrmY2bXNXQPBE1DF-IJnaWLRJsYeK_dbEoPw/formResponse",
+                
+            data: {
+                "entry.1471497835": field1,
+                "entry.1306531391": field2,
+                "entry.456770015": field3,
+                "entry.312770087": field4,
+                "entry.717129371": field5,
+            },
+
+            type: "POST",
+            dataType: "xml",
+            success: function (d) {
+                post_result = true;
+                console.log("sucesso");
+            },
+            error: function (x, y, z) {
+                post_result = true;
+            }
+            });
+            
+            return post_result;
+
+        }
+    </script>
+
+
+    <style> 
+        input[type=button]{
+            padding: 0.875rem 1.875rem;
+                margin-top: 1rem;
+                margin-left: 3rem;
+                background-color: #ffe7ee;
+                border-radius: 5px;
+                border: 1px;
+                border-style: solid;
+                border-color: black;
+                cursor: pointer;
+                color: black;
+                font-weight: 200; 
+
+        }
+        input[type=text]{
+            padding: 0.875rem 1.875rem;
+                margin-top: 1rem;
+                margin-left: 3rem;
+                background-color: #ffe7ee;
+                border-radius: 5px;
+                border: 1px;
+                border-style: solid;
+                border-color: black;
+                cursor: pointer;
+                color: black;
+                font-weight: 200; 
+
+        }
+
+        </style>
+
+
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container flex flex-ai-c">
+            <a href="index.html" class="header__logo">
+                <img src="images/yes_logo.png"
+                width="140" 
+                height="60">
+            </a>
+            
+            <div class="header__link container flex flex-ai-c">
+                
+                <a href="index.html">Início</a>
+                <a href="store.html#vestuario">Vestuário</a>
+                <a href="store.html#calcado">Calçado</a>
+                <a href="store.html#acessorios">Acessórios</a>
+    
+            </div>
+
+            <div class="header_logo container--pr flex flex-ai-c">
+                <a href="map.html">
+                    <img src="images/local.png">
+                </a>
+
+                &nbsp;&nbsp;&nbsp;
+
+                <span class="cart">
+                    <a href="cart.html">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                    </a>
+ 
+                    <span id="group">
+                        <span class="badge badge-light"></span>
+                    </span>
+ 
+                </span>
+
+            </div>
+
+        </nav>
+        
+
+    </header>
+    
+    <section class="info">
+        <section class="info__body">
+            <div class="info__Cart-Container">
+                <div class="info__Header">
+                    <h3 class="info__Heading">Lista de Compras Final</h3>
+                </div>
+                        
+                <div class="info__Heading container--pr flex flex-ai-c">
+                    <table id="myTable">
+                                    
+                       <tbody id="tituloBody"  class="container ">
+                        </tbody>
+                        <tbody id="testBody"  class="container ">
+                        </tbody>
+                    </table>                              
+                 </div>
+
+                 <div class="info__Heading container--pr flex flex-ai-c">
+                    <table id="myTable">
+                                    
+                       <tbody id="endprice"  class="container ">
+                        </tbody>
+                        
+                    </table>                              
+                 </div>
+
+               
+                <a href="cart.html">
+                    <button class="clean-cart" onclick='cartClean()'>
+                    <b> Limpar Carrinho de Compras</b>
+                    
+                    </button>
+                </a> 
+
+
+                <form action="/action_page.php" id="toGoogleForms" method="POST" onsubmit="return postToGoogle();">
+                    
+                    <label  style="color: black;font-weight: 500;  margin-left: 3rem;" for="fname">Nome: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="fname" name="entry.1471497835"><br><br>
+                    <label  style="color: black;font-weight: 500;  margin-left: 3rem;" for="morada">Morada:&nbsp;&nbsp;</label>
+                    <input type="text" id="morada" name="entry.456770015"><br><br>
+                    <label  style="color: black;font-weight: 500;  margin-left: 3rem;" for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="entry.1306531391"><br><br>
+                    <input type="hidden" id="total" name="entry.717129371">
+                    <input type="hidden" id="items" name="entry.312770087">
+
+                </form>
+                
+
+                <form method="post">
+                    <input type="button" value="Finalizar Compra"
+                    onclick="fatura()";          
+                    />
+                </form>
+
+ 
+              
+            </div>
+        
+        </section>        
+    </section>   
+    
+
+    <footer class="footer">
+
+        <div class="footer__social">
+
+            <a target="blank" href="https://www.instagram.com/laroseloures/">
+                <img src="images/instagram.png">
+            </a>
+
+            <a target="blank" href="https://www.facebook.com/larose.loures">
+                <img src="images/facebook.png">
+            </a>
+
+
+        </div>
+
+        <div class="footer__copyright">
+            &copy; La Rose. All Rights Reserved.
+
+        </div>
+        
+
+    </footer>
+    <script src="app/js/shop.js"></script>
+    <script src="app/js/cart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

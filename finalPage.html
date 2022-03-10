@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app/scss/style.css">
+    
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+        type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+        type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
+        type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+
+    <title>La Rose</title>
+
+
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container flex flex-ai-c">
+            <a href="index.html" class="header__logo">
+                <img src="images/yes_logo.png"
+                width="140" 
+                height="60">
+            </a>
+            
+            <div class="header__link container flex flex-ai-c">
+                
+                <a href="index.html">Início</a>
+                <a href="store.html#vestuario">Vestuário</a>
+                <a href="store.html#calcado">Calçado</a>
+                <a href="store.html#acessorios">Acessórios</a>
+    
+            </div>
+
+            <div class="header_logo container--pr flex flex-ai-c">
+                <a href="map.html">
+                    <img src="images/local.png">
+                </a>
+
+                &nbsp;&nbsp;&nbsp;
+
+                <span class="cart">
+                    <a href="cart.html">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                    </a>
+ 
+                    <span id="group">
+                        <span class="badge badge-light"></span>
+                    </span>
+ 
+                </span>
+
+            </div>
+
+        </nav>
+        
+
+    </header>
+    
+    <div class="contact">
+        <h2>Obrigada pela sua compra!</h2>
+        <br>
+        <h2>Por favor siga as instruções que podem ser encontradas na sua fatura.</h2>
+        <br>
+        <p>Não hesite em contactar se tiver alguma questão.</p>
+        <br>
+        <p>Visite a nossa loja física na morada abaixo indicada.</p>
+    </div>
+
+    <div class="contact">
+        <div class="contact__title">
+            <img src="images/local.png" alt="Contacto"><b>&nbsp;&nbsp;Contactos</b>
+        </div>
+
+        <div class="contact__discription">
+            &nbsp;&nbsp; <b>Morada:</b>&nbsp;&nbsp; R. D. Manuel de Arriaga n4-A, 2670-451 Loures
+            <br><br> &nbsp;&nbsp;<b>Contacto:</b>&nbsp;&nbsp; +351 218 004 676
+            <br><br>
+
+            <div class="contacts__button">
+                &nbsp;&nbsp; <button onclick='get_caminho()'><b>Caminho</b></button>
+                <p id="demo"></p>
+            </div>
+        </div>
+
+        <div class="contact__map">
+            <div id="map"></div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer__social">
+
+            <a target="blank" href="https://www.instagram.com/laroseloures/">
+                <img src="images/instagram.png">
+            </a>
+
+            <a target="blank" href="https://www.facebook.com/larose.loures">
+                <img src="images/facebook.png">
+            </a>
+
+
+        </div>
+
+        <div class="footer__copyright">
+            &copy; La Rose. All Rights Reserved.
+
+        </div>
+        
+
+    </footer>
+
+    <script src="app/js/map.js"></script>
+    <script src="app/js/shop.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

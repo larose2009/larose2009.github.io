@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="app/scss/style.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="app/js/myscript.js"></script>
+
+        <title>La Rose</title>
+
+        <style> 
+
+            input[type=grid]{
+                background-color: #FFFFFF;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+
+        </style>
+
+    </head>
+
+    <body onload="fetch_and_decode();">
+
+        <header class="header">
+            <nav class="container flex flex-ai-c">
+                <a href="index.html" class="header__logo">
+                    <img src="images/yes_logo.png"
+                    width="140" 
+                    height="60">
+                </a>
+
+                <div class="header__link container flex flex-ai-c">
+
+                    <a href="index.html">Início</a>
+                    <a href="#vestuario" onclick="fetch_and_decode('vestuario');">Vestuário</a>
+                    <a href="#calcado" onclick="fetch_and_decode('calcado');">Calçado</a>
+                    <a href="#acessorios" onclick="fetch_and_decode('acessorios');">Acessórios</a>
+
+                </div>
+
+                <div class="header_logo container--pr flex flex-ai-c">
+                    <a href="map.html">
+                        <img src="images/local.png">
+                    </a>
+
+                    &nbsp;&nbsp;&nbsp;
+
+                    <span class="cart">
+                        <a href="cart.html">
+                            <ion-icon name="bag-handle-outline"></ion-icon>
+                        </a>
+    
+                        <span id="group">
+                            <span class="badge badge-light"></span>
+                        </span>
+    
+                    </span>
+
+                </div>
+
+            </nav>
+
+        </header>
+        
+        <section class="grid container container--pall">
+            <section class="grid__storegrid">
+                <!-- TEMPLATE START -->
+                <div id="template" style="display: none">
+                    <a class="grid__item">
+                        <div class="grid__image" data-src="$item_image" id="item_image_$item_id" style="background-image: url('images/loader.gif');"></div>
+                        <div class="grid__title"> $item_id </div>
+                        <div>
+                            <br>
+                            <details class="info__text">
+                                <summary style="color:#000000;">Comprar!</summary>
+                                <table>
+                                    <tr>
+                                        <td style="color:#000000;"><br>Tamanho:</td>
+                                        <td><br><form>
+                                            <select id="tamanho-item_$item_id">
+                                            
+                                            </select>
+                                        </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:#000000;">Preço: $item_price €</td>
+                                    </tr>
+                                </table>
+                                <input type="hidden" id="price_$item_id" value="$item_price">
+                                <button class="add-cart" id="button" value="$item_id" onclick="get_product('$item_id'); cartNumbers();">
+                                    <b>Adicionar ao cesto de compras</b>
+                                </button>
+                            </details>
+                            <br>
+                        </div>
+                    </a>
+                </div>
+                <!-- TEMPLATE END -->
+
+
+                <!-- ITEMS START -->
+                <div id="artigos" class="grid__grid">
+                    <img src="images/loader.gif">
+                </div>
+                <!-- ITEMS END -->
+            </section>
+
+        </section>
+
+        <footer class="footer">
+
+            <div class="footer__social">
+
+                <a target="blank" href="https://www.instagram.com/laroseloures/">
+                    <img src="images/instagram.png">
+                </a>
+
+                <a target="blank" href="https://www.facebook.com/larose.loures">
+                    <img src="images/facebook.png">
+                </a>
+
+            </div>
+
+            <div class="footer__copyright">
+                &copy; La Rose. All Rights Reserved.
+
+            </div>
+
+        </footer>
+        <script src="app/js/shop.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    </body>
+
+</html>

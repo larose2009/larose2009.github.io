@@ -1,0 +1,236 @@
+.info{
+    background-color: $white;
+    align-self: center;
+
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-top: 5rem;
+       margin-bottom: 4rem;
+    }
+    
+   
+
+    select {
+        font-size: .9rem;
+    }
+  
+    a{
+        font-size: $font-sm;
+        color: $black;
+        line-height: 1.5;
+    }
+
+    p{
+        text-align: justify;
+    }
+   
+
+    &__text{
+            text-align: left;
+            font-size: $font-med;
+            line-height: 1.5rem;
+            align-self: center;
+            p{
+                text-align: center;
+                font-size: $font-med;
+            }
+            script{
+                color: $white;
+            }
+            a{
+                display: block;
+            }
+            button{
+                padding: 0.875rem 1.875rem;
+                margin-top: 1rem;
+                background-color: $pink;
+                border-radius: 5px;
+                border: 1px;
+                border-style: solid;
+                border-color: black;
+                cursor: pointer;
+                color: $black;
+                font-weight: 200;
+                
+                        b{
+                            color: black;
+                        }
+                 }
+           
+    }
+  
+
+    &__image{
+     img{
+        padding: 1rem;
+        padding-left: 5rem;
+        align-items: center;
+        justify-items: center;
+     }
+    }
+
+    &__final{
+        padding: 0.875rem 1.875rem;
+        margin-top: 1rem;
+        margin-left: 3rem;
+        background-color: $pink;
+        border-radius: 5px;
+        border: 1px;
+        border-style: solid;
+        cursor: pointer;
+        color: $black;
+        font-weight: 200;  
+
+       
+    }
+   
+   .badge {
+        position: relative;
+        top: -20px;
+        left: -25px;
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+
+       button{
+        padding: 0.875rem 1.875rem;
+        margin-top: 1rem;
+        margin-left: 3rem;
+        background-color: $pink;
+        border-radius: 5px;
+        border: 1px;
+        border-style: solid;
+        border-color: black;
+        cursor: pointer;
+        color: $black;
+        font-weight: 200; 
+        
+                b{
+                    color: black;
+                }
+         }
+         .cart ion-icon{
+            font-size: 25px;
+        }
+
+        //TESTE PRA BAIXO
+
+        &__Cart-Container{
+            width: 70%;
+            height: 85%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0px 25px 40px #fad8f53d;
+            margin-left: 2rem;
+
+        }
+
+        &__body{
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           }
+
+           &__Header{
+            margin: auto;
+            width: 90%;
+            height: 15%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           }
+           
+           &__Heading{
+            font-size: 20px;
+            font-family: ‘Open Sans’;
+            font-weight: 700;
+            color: #020303;
+            button{
+                padding: 0.875rem 1.875rem;
+                margin-top: 1rem;
+                margin-left: 3rem;
+                background-color: $pink;
+                border-radius: 5px;
+                border: 1px;
+                border-style: solid;
+                border-color: black;
+                cursor: pointer;
+                color: $black;
+                font-weight: 200; 
+                
+                        b{
+                            color: black;
+                        }
+                 }
+            
+           }
+           
+           &__thanks{
+            border: 2px;
+            border-style: solid none;
+            border-color: black;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            text-align: center;
+            margin: 5rem;
+           }
+    
+           &__headshop{
+            border: 2px;
+            border-style: solid none;
+            border-color: black;
+            margin-left: 2rem;
+            margin-right: 2rem;
+
+            h2{
+                width: 90%;
+                font-size: $font-sm;
+                text-align: center;
+                margin: 1rem;
+                 }
+                 h3{
+                    width: 90%;
+                    font-size: $font-sm;
+                    text-align: center;
+                    margin: 1rem;
+                 }
+                 
+           }
+
+        table{ 
+            border: 2px;
+            border-style: solid none;
+            border-color: black;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            width: 100%;
+            text-align: center;
+
+                 button{
+                    background-color: transparent;
+                    border-style: none;
+                    cursor: pointer;
+                    color: $black;
+                    margin: 0rem;
+                }
+                        tbody{
+                            
+                            border: 2px;
+                            border-style:  none none solid none ;
+                            border-color: black;
+                            font-size: $font-sm;
+                            width: 100%;
+                            text-align: center;
+                            
+                        }
+
+        }      
+                    
+   
+           
+}

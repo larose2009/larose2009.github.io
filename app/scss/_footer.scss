@@ -1,0 +1,41 @@
+.footer {
+    
+    background-color: $pink;
+    color: black;
+    padding: 2rem;
+    border-style: solid none none;
+
+            display: grid;
+            grid-template-areas:
+                "social social"
+                "copyright copyright";
+
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+
+    a{
+        color:black;
+        margin-bottom: 1.5rem;
+    }
+
+    p{
+        margin-top: 0;
+    }
+
+    &__social{
+        font-size: $font-med;
+        grid-area: social;
+        justify-self: end;
+        align-self: center;
+    }
+
+    &__copyright{
+        font-size: 0.8rem;
+        grid-area: copyright;
+        justify-self: end;
+        align-self: bottom;
+        margin-left: 2rem;
+        margin-top: 2rem;
+    }
+}

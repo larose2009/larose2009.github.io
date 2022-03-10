@@ -1,0 +1,89 @@
+.contact{
+    background-color: white;
+    color:black;
+    margin: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+
+    a{
+        color: black;
+        margin: 1rem;
+        background-color: white;
+
+    }
+
+    p{
+        margin-top: 0;
+        background-color: white;
+    }
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2);
+    grid-template-areas: 
+        "title mapa"
+        "discription mapa"
+    
+        ;
+
+        &__map{
+
+            text-align: right;
+            grid-area: mapa;
+            margin-bottom: 0;
+            height: 480px;
+            width: 100%;
+            border: solid;
+            border-color: black;
+
+            #map{
+                height: 480px;
+            }
+        }
+
+        &__title{
+            grid-area: title;
+            display: flex;
+            text-align: center;
+            background-color: white;
+            color: black;
+            font-size: 2rem;
+            line-height: 2rem;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+        }
+
+        &__discription{
+            grid-area: discription;
+            text-align: justify;
+            background-color: white;
+            color:black;
+            font-size: $font-med;
+            line-height: 1.7rem;
+            padding: 1rem;
+            margin-left: 5rem;
+
+            b{
+                color: pink;
+                text-align: justify;
+            }
+        }
+
+        &__button{
+            button{
+                padding: o.875rem 1.875rem;
+                background: linear-gradient(to right, $pink, $grey);
+                border-radius: 50px;
+                border: 0;
+                cursor: pointer;
+                color:black;
+                font-weight: 400;
+
+                b{
+                    color:black;
+                }
+            }
+        }
+    
+}
