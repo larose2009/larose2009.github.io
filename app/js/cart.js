@@ -193,7 +193,7 @@ function fatura(){
     comprasFinal.push([" "," "," "]);
     comprasFinal.push(["Instruções:"]);
     comprasFinal.push(["Por favor faça o pagamento para o MBWay XXX ou IBAN XXX"]);
-    comprasFinal.push(["Por favor envie esta fatura para o número XXX]);
+    comprasFinal.push(["Por favor envie o comprovativo de pagamento para o número XXX"]);
 
 
     const ws = XLSX.utils.json_to_sheet(comprasFinal);
@@ -205,6 +205,8 @@ function fatura(){
     document.location = 'finalPage.html'
 
     let result = postToGoogle();
+
+    console.log(result);
 
     if ((result == true)||(result == false)){
         cartClean();
