@@ -22,7 +22,7 @@ function fetch_and_decode(page_cat) {
     console.log(page_cat)
 
     if (global_store == ""){ //gets json if there is global_store is empty
-        let file_json_url = "https://script.google.com/macros/s/AKfycbyEGVwvh8oXuvA3k_1-JzuppxOvlbOQV75S593tAm1bhO4_f_TADHXzFZK0wi4pDTf1ZQ/exec";
+        let file_json_url = "https://script.google.com/macros/s/AKfycbxFT59xwWEVbE_eUb2QK1Z9REhHVfbEAFyj4t_DUG3tlNRu7NOQZ740mA3f4yVGffeRgQ/exec";
 
         // Using jQuery getJSON
         $.getJSON(file_json_url, function (data) {
