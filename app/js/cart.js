@@ -193,7 +193,7 @@ function fatura(){
     comprasFinal.push([" "," "," "]);
     comprasFinal.push(["Instruções:"]);
     comprasFinal.push(["Por favor faça o pagamento para o MBWay XXX ou IBAN XXX"]);
-    comprasFinal.push(["Por favor envie esta fatura para o número XXX, assim como o comprovativo de pagamento."]);
+    comprasFinal.push(["Por favor envie esta fatura para o número XXX]);
 
 
     const ws = XLSX.utils.json_to_sheet(comprasFinal);
